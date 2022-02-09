@@ -6,6 +6,7 @@
   "files": [
     "base.json",
     "nextjs.json",
+    "cra.json",
     "docusaurus.json",
     "react-library.json"
   ]
