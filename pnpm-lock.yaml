@@ -80,7 +80,7 @@ importers:
 
   apps/web:
     specifiers:
-      '@types/node': ^17.0.12
+      '@types/node': ^16.11.22
       '@types/react': 17.0.37
       config: workspace:*
       eslint: 7.32.0
@@ -97,7 +97,7 @@ importers:
       react-dom: 17.0.2_react@17.0.2
       ui: link:../../packages/ui
     devDependencies:
-      '@types/node': 17.0.15
+      '@types/node': 16.11.22
       '@types/react': 17.0.37
       config: link:../../packages/config
       eslint: 7.32.0
@@ -3539,7 +3539,6 @@ packages:
 
   /@types/node/16.11.22:
     resolution: {integrity: sha512-DYNtJWauMQ9RNpesl4aVothr97/tIJM8HbyOXJ0AYT1Z2bEjLHyfjOBPAQQVMLf8h3kSShYfNk8Wnto8B2zHUA==}
-    dev: false
 
   /@types/node/17.0.15:
     resolution: {integrity: sha512-zWt4SDDv1S9WRBNxLFxFRHxdD9tvH8f5/kg5/IaLFdnSNXsDY4eL3Q3XXN+VxUnWIhyVFDwcsmAprvwXoM/ClA==}
