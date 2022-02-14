@@ -48,7 +48,7 @@ app.post('/login', (req, res) => {
       user: {
         username: 'userA',
         permissions: ['AMAZING_ADMIN_PERMISSION'],
-      }
+      },
     })
   }, 2000)
 })

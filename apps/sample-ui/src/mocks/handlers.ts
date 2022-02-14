@@ -6,7 +6,10 @@ export const handlers = [
     sessionStorage.setItem('is-authenticated', 'true')
     const originalResponse = await ctx.fetch(req)
     const originalResponseData = await originalResponse.json()
-    console.log('[msw] login handler: originalResponseData:', originalResponseData);
+    console.log(
+      '[msw] login handler: originalResponseData:',
+      originalResponseData
+    )
 
     return res(
       ctx.status(200),
@@ -14,15 +17,12 @@ export const handlers = [
         user: {
           username: 'mockUserA',
           permissions: ['AMAZING_ADMIN_PERMISSION'],
-        }
-      }),
+        },
+      })
     )
   }),
 
   rest.get(`${process.env.REACT_APP_API_URL}/magicitems`, (req, res, ctx) => {
-    return res(
-      ctx.status(200),
-      ctx.json(["mock response"]),
-    )
+    return res(ctx.status(200), ctx.json(['mock response']))
   }),
 ]

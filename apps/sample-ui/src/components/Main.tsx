@@ -10,7 +10,9 @@ import { userProfileState } from '../state/userProfile'
  */
 
 function getMagicItems() {
-  return fetch(`${process.env.REACT_APP_API_URL}/magicitems`).then(res => res.json())
+  return fetch(`${process.env.REACT_APP_API_URL}/magicitems`).then(res =>
+    res.json()
+  )
 }
 
 const Main = () => {
