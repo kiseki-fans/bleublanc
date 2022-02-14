@@ -7,6 +7,10 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const queryClient = new QueryClient()
+if (['development', 'test'].includes(process.env.NODE_ENV)) {
+  const { worker } = require('./mocks/browser')
+  worker.start()
+}
 
 ReactDOM.render(
   <React.StrictMode>

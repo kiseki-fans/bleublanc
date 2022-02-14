@@ -1,5 +1,5 @@
 {
   "extends": "tsconfig/cra.json",
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "src/.emv", "src/mocks/handlers.js", "src/mocks/browser.js"],
   "exclude": ["node_modules"]
 }
