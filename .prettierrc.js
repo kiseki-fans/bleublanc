@@ -4,4 +4,5 @@ module.exports = {
   endOfLine: 'lf',
   arrowParens: 'avoid',
   tabWidth: 2,
-};
+  semi: false,
+}
