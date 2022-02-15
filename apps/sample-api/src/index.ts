@@ -42,6 +42,17 @@ app.get('/magicitems', (req, res) => {
   }, 2000)
 })
 
+app.post('/login', (req, res) => {
+  setTimeout(() => {
+    res.send({
+      user: {
+        username: 'userA',
+        permissions: ['AMAZING_ADMIN_PERMISSION'],
+      },
+    })
+  }, 2000)
+})
+
 app.listen(4001, function () {
   console.log('Example app listening on port 4001!')
 })
