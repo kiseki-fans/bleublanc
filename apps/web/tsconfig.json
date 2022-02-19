@@ -1,5 +1,8 @@
 {
   "extends": "tsconfig/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "compilerOptions": {
+    "types": ["@types/wicg-file-system-access"]
+  },
   "exclude": ["node_modules"]
 }
