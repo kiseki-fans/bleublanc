@@ -184,7 +184,7 @@ const MockDashboard = () => {
           </table>
         </section>
         <section className="col">
-          <iframe className={styles.uiframe} src="http://localhost:3000" />
+          <iframe className={styles.uiframe} src={process.env.NEXT_PUBLIC_UI_URL} />
         </section>
       </div>
     </main>
