@@ -12,11 +12,15 @@ function login() {
 const Login = () => {
   const [, setUserProfile] = useRecoilState(userProfileState)
 
-  const loginMutation = useMutation<IUserProfile, Error>('login', login, {
-    onSuccess: (data, _variables, _context) => {
-      setUserProfile(data)
-    },
-  })
+  const loginMutation = useMutation<{ user: IUserProfile }, Error>(
+    'login',
+    login,
+    {
+      onSuccess: (data, _variables, _context) => {
+        setUserProfile(data.user)
+      },
+    }
+  )
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
