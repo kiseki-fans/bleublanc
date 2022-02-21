@@ -9,16 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@xstate/react": "^2.0.0",
     "jsondiffpatch": "^0.4.1",
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "xstate": "^4.30.1"
   },
   "devDependencies": {
-    "@types/wicg-file-system-access": "^2020.9.5",
     "@types/node": "^16.11.22",
     "@types/react": "17.0.37",
+    "@types/wicg-file-system-access": "^2020.9.5",
     "config": "workspace:*",
     "eslint": "7.32.0",
     "next-transpile-modules": "9.0.0",

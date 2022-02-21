@@ -116,6 +116,7 @@ importers:
       '@types/node': ^16.11.22
       '@types/react': 17.0.37
       '@types/wicg-file-system-access': ^2020.9.5
+      '@xstate/react': ^2.0.0
       config: workspace:*
       eslint: 7.32.0
       jsondiffpatch: ^0.4.1
@@ -126,12 +127,15 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.3
       ui: workspace:*
+      xstate: ^4.30.1
     dependencies:
+      '@xstate/react': 2.0.0_978055964c03f502b22b052c75b73812
       jsondiffpatch: 0.4.1
       next: 12.0.8_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       ui: link:../../packages/ui
+      xstate: 4.30.1
     devDependencies:
       '@types/node': 16.11.22
       '@types/react': 17.0.37
@@ -4134,6 +4138,26 @@ packages:
   /@xmldom/xmldom/0.7.5:
     resolution: {integrity: sha512-V3BIhmY36fXZ1OtVcI9W+FxQqxVLsPKcNjWigIaa81dLC9IolJl5Mt4Cvhmr0flUnjSpTdrbMTSbXqYqV5dT6A==}
     engines: {node: '>=10.0.0'}
+    dev: false
+
+  /@xstate/react/2.0.0_978055964c03f502b22b052c75b73812:
+    resolution: {integrity: sha512-Pw8uHkamrMxoV8cwnVHv570Zun7o2ktokn5bkUOrv6PufFg5JHL2URiGvbyR9JqmIxfJdXregWvCGa3pqXd7Cg==}
+    peerDependencies:
+      '@xstate/fsm': ^1.6.4
+      react: ^16.8.0 || ^17.0.0
+      xstate: ^4.29.0
+    peerDependenciesMeta:
+      '@xstate/fsm':
+        optional: true
+      xstate:
+        optional: true
+    dependencies:
+      react: 17.0.2
+      use-isomorphic-layout-effect: 1.1.1_cfedea9b3ed0faf0dded75c187406c5e
+      use-subscription: 1.5.1_react@17.0.2
+      xstate: 4.30.1
+    transitivePeerDependencies:
+      - '@types/react'
     dev: false
 
   /@xtuc/ieee754/1.2.0:
@@ -12939,6 +12963,19 @@ packages:
       react: 17.0.2
     dev: false
 
+  /use-isomorphic-layout-effect/1.1.1_cfedea9b3ed0faf0dded75c187406c5e:
+    resolution: {integrity: sha512-L7Evj8FGcwo/wpbv/qvSfrkHFtOpCzvM5yl2KVyDJoylVuSvzphiiasmjgQPttIGBAy2WKiBNR98q8w7PiNgKQ==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@types/react': 17.0.37
+      react: 17.0.2
+    dev: false
+
   /use-isomorphic-layout-effect/1.1.1_react@17.0.2:
     resolution: {integrity: sha512-L7Evj8FGcwo/wpbv/qvSfrkHFtOpCzvM5yl2KVyDJoylVuSvzphiiasmjgQPttIGBAy2WKiBNR98q8w7PiNgKQ==}
     peerDependencies:
@@ -13593,6 +13630,10 @@ packages:
 
   /xmlchars/2.2.0:
     resolution: {integrity: sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==}
+    dev: false
+
+  /xstate/4.30.1:
+    resolution: {integrity: sha512-vNOk8iRfhtbl9/RVF6HJWbL+YfsfGLiee1tGm6cuDcPrSStsRvfAhLVxSPoePx5XBlCSYOXaweLStmrpk2rvhA==}
     dev: false
 
   /xtend/4.0.2:
