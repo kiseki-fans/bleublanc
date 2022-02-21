@@ -119,14 +119,18 @@ const MockDashboard = () => {
           {handler && <div>Mock folder root: {handler.name}</div>}
           <button
             onClick={async () => {
-              const dirHandle = await window.showDirectoryPicker({
-                title: 'Select mock json folder root',
-              })
-              await dirHandle.requestPermission({
-                mode: 'readwrite',
-              })
-              setHandle(dirHandle)
-              await updateFileContrents(dirHandle)
+              try {
+                const dirHandle = await window.showDirectoryPicker({
+                  title: 'Select mock json folder root',
+                })
+                await dirHandle.requestPermission({
+                  mode: 'readwrite',
+                })
+                setHandle(dirHandle)
+                await updateFileContrents(dirHandle)
+              } catch (error) {
+                console.error(error);
+              }
             }}
           >
             {handler ? 'Update' : 'Select'} mock directory
