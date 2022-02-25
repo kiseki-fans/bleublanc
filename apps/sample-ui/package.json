@@ -7,7 +7,6 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.0",
-    "@types/node": "^16.11.22",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "msw": "^0.36.8",
@@ -20,9 +19,16 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.2",
+    "@testing-library/dom": "^8.11.3",
+    "@types/node": "^16.11.22",
+    "cypress": "^9.5.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "tsconfig": "workspace:*"
   },
   "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "dev": "npm run start",
     "start": "react-scripts start",
     "build": "react-scripts build",

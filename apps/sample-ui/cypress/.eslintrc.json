@@ -1,0 +1,10 @@
+{
+  "env": {
+    "cypress/globals": true
+  },
+  "plugins": ["cypress"],
+  "rules": {
+    "testing-library/await-async-query": false,
+    "testing-library/prefer-screen-queries": false
+  }
+}

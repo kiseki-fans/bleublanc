@@ -1,0 +1,6 @@
+{
+  "user": {
+    "username": "mock-username",
+    "permissions": ["AMAZING_ADMIN_PERMISSION"]
+  }
+}

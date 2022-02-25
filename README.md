@@ -33,6 +33,12 @@ pnpm install
 pnpm run dev
 ```
 
+## Cypress
+
+```sh
+pnpm run cypress
+```
+
 ## Useful Links
 
 Learn more about the power of Turborepo:
