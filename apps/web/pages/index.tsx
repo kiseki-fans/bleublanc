@@ -1,10 +1,12 @@
-import { Button } from 'ui'
+import Link from 'next/link'
 
 export default function Web() {
   return (
     <div>
-      <h1>Web</h1>
-      <Button />
+      Go to{' '}
+      <Link href="/MockDashBoard">
+        <a>MockDashBoard!</a>
+      </Link>
     </div>
   )
 }

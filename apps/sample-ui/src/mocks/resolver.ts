@@ -4,6 +4,8 @@ import {
   ResponseComposition,
   RestContext,
   RestRequest,
+  GraphQLRequest,
+  GraphQLVariables,
 } from 'msw'
 
 export interface IRecordedResponse {
@@ -11,13 +13,16 @@ export interface IRecordedResponse {
   originalResponse: any
 }
 
-
 /**
- * create a request name based off msw RestRequest object. 
+ * create a request name based off msw RestRequest object.
  * e.g. if request is GET /users/123, then request name would be get-users-123
  * TODO: support wildcard e.g. /users/{id}
  */
-function parseRequestName(req: RestRequest<DefaultRequestBody, PathParams>) {
+export function parseRequestName(
+  req:
+    | RestRequest<DefaultRequestBody, PathParams>
+    | GraphQLRequest<GraphQLVariables>
+) {
   const path = req.url.pathname
     .substring(1, req.url.pathname.length) // remove leading slash
     .split('/')

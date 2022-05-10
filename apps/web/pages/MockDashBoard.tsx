@@ -32,18 +32,28 @@ const MockDashboard = () => {
   const handleMessage = (e: MessageEvent) => {
     console.log('message:', e)
     const data = e.data?.data
-    if (e.data?.event !== 'bleublanc_response_update') return
-    const savedResponses = localStorage.getItem(LOCAL_STORAGE_KEY)
-    const currentResponses: IRecordedResponse[] = savedResponses
-      ? JSON.parse(savedResponses)
-      : []
-    const index = currentResponses.findIndex(r => r.name === data.name)
-    if (index > -1) {
-      currentResponses.splice(index, 1)
+
+    switch (e.data?.event) {
+      case 'bleublanc_response_update':
+      case 'bleublanc_response_graphql_update':
+        const savedResponses = localStorage.getItem(LOCAL_STORAGE_KEY)
+        const currentResponses: IRecordedResponse[] = savedResponses
+          ? JSON.parse(savedResponses)
+          : []
+        const index = currentResponses.findIndex(r => r.name === data.name)
+        if (index > -1) {
+          currentResponses.splice(index, 1)
+        }
+        currentResponses.push(data)
+        localStorage.setItem(
+          LOCAL_STORAGE_KEY,
+          JSON.stringify(currentResponses)
+        )
+        console.log('recorded mock response update for:', data)
+        return
+      default:
+        return
     }
-    currentResponses.push(data)
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(currentResponses))
-    console.log('recorded mock response update for:', data)
   }
 
   useEffect(() => {
@@ -129,7 +139,7 @@ const MockDashboard = () => {
                 setHandle(dirHandle)
                 await updateFileContrents(dirHandle)
               } catch (error) {
-                console.error(error);
+                console.error(error)
               }
             }}
           >
@@ -187,8 +197,11 @@ const MockDashboard = () => {
             </tbody>
           </table>
         </section>
-        <section className="col">
-          <iframe className={styles.uiframe} src={process.env.NEXT_PUBLIC_UI_URL} />
+        <section style={{ flex: 1 }}>
+          <iframe
+            className={styles.uiframe}
+            src={process.env.NEXT_PUBLIC_UI_URL}
+          />
         </section>
       </div>
     </main>

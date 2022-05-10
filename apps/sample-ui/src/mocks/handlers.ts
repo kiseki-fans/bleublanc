@@ -1,7 +1,25 @@
-import { rest } from 'msw'
+import { rest, graphql } from 'msw'
 import { recordRestResponse } from './resolver'
 
 export const handlers = [
+  graphql.operation(async (req, _res, ctx) => {
+    const originalResponse = await ctx.fetch(req)
+    const originalResponseData = await originalResponse.json()
+
+    window.parent?.postMessage(
+      {
+        event: 'bleublanc_response_graphql_update',
+        data: {
+          // @ts-ignore - req.body?.operationName definitely exist, the typing is wrong
+          name: `post-graphql-${req.body?.operationName}`,
+          variables: req?.variables,
+          originalResponse: originalResponseData,
+        },
+      },
+      '*'
+    )
+  }),
+
   rest.get(`${process.env.REACT_APP_API_URL}/*`, recordRestResponse),
   rest.post(`${process.env.REACT_APP_API_URL}/*`, recordRestResponse),
   rest.patch(`${process.env.REACT_APP_API_URL}/*`, recordRestResponse),
